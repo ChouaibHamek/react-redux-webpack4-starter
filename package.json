@@ -1,5 +1,5 @@
 {
-  "name": "DevOps",
+  "name": "React-Redux-Webpack4-Starter",
   "version": "1.0.0",
   "description": "A SPA to manage the platform internally",
   "main": "index.js",
