@@ -22,9 +22,9 @@
 
 ## Testing
 
-`> npm run test `   Run all tests
-`> npm run test:watch`   Run all tests with watch mode
-`> npm run test:watch:feat <path>`   Run tests for a specific feature.
+* `> npm run test `   Run all tests
+* `> npm run test:watch`   Run all tests with watch mode
+* `> npm run test:watch:feat <path>`   Run tests for a specific feature.
 Path could be `./src/containers/app/tests` for app-specific tests.
 
 ## Production
