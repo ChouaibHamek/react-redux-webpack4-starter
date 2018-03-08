@@ -33,8 +33,8 @@ module.exports = {
     extensions: ['*', '.js', '.jsx']
   },
   output: {
-    path: __dirname + 'dist',
-    publicPath: '/dist/',
+    path: __dirname + '/dist',
+    publicPath: '/',
     filename: 'bundle.js'
   },
   plugins: [
