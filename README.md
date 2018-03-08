@@ -7,9 +7,11 @@
 * Webpack 4
 * Babel
 * Mocha Chai testing set up
+* Local Express server set up for dev
+* Hot Module Replacement set up
 * redux-devtools-extension set up
+* redbox-react set up
 * Staging ES Next Features
-* Hot Module Replacement
 * Deployment ready
 * Example axios and thunk api requests handling
 
@@ -17,8 +19,13 @@
 
 ```
 > npm install
-> npm run dev
 ```
+
+## Running
+* `> npm run dev `   Concurrently run react app on port 8080 and dev Server on port 5000
+* `> npm run client`   Run react app only
+* `> npm run server`   Run dev server only
+* `> npm run start`   Run prod Server (to serve the react app on port 5000)
 
 ## Testing
 
