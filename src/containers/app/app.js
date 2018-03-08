@@ -8,7 +8,7 @@ export  default class extends Component {
 
   render(){
     return(
-      <div className="App">
+      <div className="app">
         <BrowserRouter>
           <Switch>
             <Route path="/posts" component={Posts} />
