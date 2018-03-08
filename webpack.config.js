@@ -3,7 +3,7 @@ const webpack = require('webpack');
 module.exports = {
   entry: [
     'react-hot-loader/patch',
-    './src/index.js'
+    './app/src/index.js'
   ],
   module: {
     rules: [
@@ -33,7 +33,7 @@ module.exports = {
     extensions: ['*', '.js', '.jsx']
   },
   output: {
-    path: __dirname + '/dist',
+    path: __dirname + '/app/dist',
     publicPath: '/',
     filename: 'bundle.js'
   },
@@ -41,7 +41,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin()
   ],
   devServer: {
-    contentBase: './dist',
+    contentBase: './app/dist',
     historyApiFallback: true,
     hot: true
   }

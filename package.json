@@ -9,7 +9,7 @@
     "test:watch": "npm run test -- --watch",
     "test:watch:feat": "mocha --watch --compilers js:babel-core/register --require ./src/utils/test_helper.js --recursive",
     "postinstall": "webpack -p",
-    "start": "node server.js"
+    "start": "node server/server.js"
   },
   "keywords": [],
   "author": "",
