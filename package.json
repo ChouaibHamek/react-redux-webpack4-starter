@@ -1,0 +1,57 @@
+{
+  "name": "DevOps",
+  "version": "1.0.0",
+  "description": "A SPA to manage the platform internally",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel-core/register --require ./src/utils/test_helper.js \"./{,!(node_modules)/**/}*.spec.js\"",
+    "dev": "webpack-dev-server --config ./webpack.config.js --mode development",
+    "test:watch": "npm run test -- --watch",
+    "test:watch:feat": "mocha --watch --compilers js:babel-core/register --require ./src/utils/test_helper.js --recursive",
+    "postinstall": "webpack -p",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "babel": {
+    "presets": [
+      "env",
+      "react",
+      "stage-2"
+    ]
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.3",
+    "babel-plugin-lodash": "^3.3.2",
+    "babel-preset-es2015": "^6.1.18",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "chai": "^4.1.2",
+    "chai-jquery": "^2.0.0",
+    "jquery": "^3.3.1",
+    "jsdom": "^11.6.2",
+    "mocha": "^5.0.4",
+    "style-loader": "^0.20.2",
+    "css-loader": "^0.28.10",
+    "react-hot-loader": "^4.0.0",
+    "redbox-react": "^1.5.0",
+    "redux-devtools-extension": "^2.13.2",
+    "webpack-cli": "^2.0.10",
+    "webpack-dev-server": "^3.1.0"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "express": "^4.16.2",
+    "lodash": "^4.17.5",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
+    "webpack": "^4.1.0"
+  }
+}
