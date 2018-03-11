@@ -1,16 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import {Provider} from "react-redux";
+import React from 'react'
+import ReactDOM from 'react-dom'
+import {Provider} from "react-redux"
 
+import './semantic/dist/semantic.min.css'
 import './global-style.css'
 
-import configureStore from "./utils/configure_store";
-const store = configureStore();
+import configureStore from "./utils/configure_store"
+const store = configureStore()
 
-const rootEl = document.getElementById("root");
+const rootEl = document.getElementById("root")
 
 let render = () => {
-    const App = require("./containers/app/app.js").default;
+    const App = require("./containers/app/app.js").default
     ReactDOM.render(
         <Provider store={store}>
           <App/>
@@ -22,7 +23,7 @@ let render = () => {
 if(module.hot) {
     const renderApp = render;
     const renderError = (error) => {
-        const RedBox = require("redbox-react").default;
+        const RedBox = require("redbox-react").default
         ReactDOM.render(
             <RedBox error={error} />,
             rootEl,
@@ -30,16 +31,16 @@ if(module.hot) {
     };
     render = () => {
         try {
-            renderApp();
+            renderApp()
         }
         catch(error) {
-            console.error(error);
-            renderError(error);
+            console.error(error)
+            renderError(error)
         }
     };
     module.hot.accept("./containers/app/app.js", () => {
-        setTimeout(render);
+        setTimeout(render)
     });
 }
 
-render();
+render()

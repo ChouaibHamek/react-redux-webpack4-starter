@@ -15,18 +15,20 @@ module.exports = {
           presets: ['react', 'es2015', 'stage-2']
         }
       },
-      {
-        test: /\.css$/,
-        loader: 'style-loader'
-      },
-      {
-        test: /\.css$/,
-        loader: 'css-loader',
-        query: {
-          modules: true,
-          localIdentName: '[name]__[local]___[hash:base64:5]'
-        }
-      }
+      { test: /\.(eot|svg|ttf|woff|woff2|png)/, use: ['file-loader'] },
+      { test: /\.css$/, use: ["style-loader", "css-loader"] }
+      // {
+      //   test: /\.css$/,
+      //   loader: 'style-loader'
+      // },
+      // {
+      //   test: /\.css$/,
+      //   loader: 'css-loader',
+      //   query: {
+      //     modules: true,
+      //     localIdentName: '[name]__[local]___[hash:base64:5]'
+      //   }
+      // }
     ]
   },
   resolve: {

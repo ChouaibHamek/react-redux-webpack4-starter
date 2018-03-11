@@ -8,6 +8,8 @@
     "client": "webpack-dev-server --config ./webpack.config.js --mode development",
     "server": "NODE_ENV=development nodemon server/server.js",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "build-semantic": "cd app/src/semantic && gulp build-css build-assets",
+    "watch-semantic": "cd app/src/semantic && npm run build-semantic && gulp watch",
     "test:watch": "npm run test -- --watch",
     "test:watch:feat": "mocha --watch --compilers js:babel-core/register --require ./app/src/utils/test_helper.js --recursive",
     "postinstall": "webpack -p",
@@ -35,13 +37,17 @@
     "chai-jquery": "^2.0.0",
     "concurrently": "^3.5.1",
     "css-loader": "^0.28.10",
+    "file-loader": "^1.1.11",
+    "gulp": "^3.9.1",
     "jquery": "^3.3.1",
     "jsdom": "^11.6.2",
     "mocha": "^5.0.4",
     "react-hot-loader": "^4.0.0",
     "redbox-react": "^1.5.0",
     "redux-devtools-extension": "^2.13.2",
+    "semantic-ui": "^2.3.0",
     "style-loader": "^0.20.2",
+    "webpack": "^4.1.1",
     "webpack-cli": "^2.0.10",
     "webpack-dev-server": "^3.1.0"
   },
@@ -55,6 +61,6 @@
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
-    "webpack": "^4.1.0"
+    "semantic-ui-react": "^0.78.3"
   }
 }

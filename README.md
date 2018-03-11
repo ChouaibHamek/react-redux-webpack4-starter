@@ -3,9 +3,11 @@
 ## Features
 
 * React 16
-* Thunk set up
 * Webpack 4
 * Babel
+* Redux and Thunk set up
+* Semantic UI React set up
+* Semantic UI theming set up
 * Mocha Chai testing set up
 * Local Express server set up for dev
 * Hot Module Replacement set up
@@ -22,7 +24,9 @@
 ```
 
 ## Running
-* `> npm run dev `   Concurrently run react app on port 8080 and dev Server on port 5000
+
+* `> npm run build-semantic`   Run Glup build tasks to generate the minified CSS file
+* `> npm run dev `   Concurrently run react app on port 8080 and dev server on port 5000
 * `> npm run client`   Run react app only
 * `> npm run server`   Run dev server only
 * `> npm run start`   Run prod Server (to serve the react app on port 5000)
