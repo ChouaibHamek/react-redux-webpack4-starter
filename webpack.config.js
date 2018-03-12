@@ -1,9 +1,9 @@
-const webpack = require('webpack');
+const webpack = require('webpack')
 
 module.exports = {
   entry: [
     'react-hot-loader/patch',
-    './app/src/index.js'
+    './app/src/index.js',
   ],
   module: {
     rules: [
@@ -12,39 +12,27 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-          presets: ['react', 'es2015', 'stage-2']
-        }
+          presets: ['react', 'es2015', 'stage-2'],
+        },
       },
       { test: /\.(eot|svg|ttf|woff|woff2|png)/, use: ['file-loader'] },
-      { test: /\.css$/, use: ["style-loader", "css-loader"] }
-      // {
-      //   test: /\.css$/,
-      //   loader: 'style-loader'
-      // },
-      // {
-      //   test: /\.css$/,
-      //   loader: 'css-loader',
-      //   query: {
-      //     modules: true,
-      //     localIdentName: '[name]__[local]___[hash:base64:5]'
-      //   }
-      // }
-    ]
+      { test: /\.css$/, use: ['style-loader', 'css-loader'] },
+    ],
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx']
+    extensions: ['*', '.js', '.jsx'],
   },
   output: {
-    path: __dirname + '/app/dist',
+    path: `${__dirname}/app/dist`,
     publicPath: '/',
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
   ],
   devServer: {
     contentBase: './app/dist',
     historyApiFallback: true,
-    hot: true
-  }
-};
+    hot: true,
+  },
+}
