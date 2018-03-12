@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import postsReducer from '../containers/posts/reducer.js'
-import expressReducer from '../containers/homePage/reducer.js'
+import postsReducer from '../containers/posts/reducer'
+import expressReducer from '../containers/homePage/reducer'
 
 export default combineReducers({
   express: expressReducer,
-  posts: postsReducer
+  posts: postsReducer,
 })

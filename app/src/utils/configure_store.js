@@ -1,17 +1,19 @@
-import { createStore, applyMiddleware } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import thunk from 'redux-thunk';
-import reducer from './reducers.js';
+import { createStore, applyMiddleware } from 'redux'
+import { composeWithDevTools } from 'redux-devtools-extension'
+import thunk from 'redux-thunk'
+import reducer from './reducers'
 
-const middlewares = [thunk];
-const enhancer = composeWithDevTools((applyMiddleware(...middlewares)));
+const reducers = require('./reducers.js').default
+
+const middlewares = [thunk]
+const enhancer = composeWithDevTools(applyMiddleware(...middlewares))
 
 export default function configureStore(initialState) {
   const store = createStore(reducer, initialState, enhancer)
   if (module.hot) {
     module.hot.accept('./reducers.js', () => {
-      store.replaceReducer(require('./reducers.js').default)
-    });
+      store.replaceReducer(reducers)
+    })
   }
-  return store;
+  return store
 }
