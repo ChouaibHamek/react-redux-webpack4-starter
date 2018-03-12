@@ -4,7 +4,7 @@
   "description": "A SPA to manage the platform internally",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register --require ./app/src/utils/test_helper.js \"./{,!(node_modules)/**/}*.spec.js\"",
+    "test": "NODE_ENV=test mocha --compilers js:babel-core/register --require ./app/src/utils/test_helper.js \"./{,!(node_modules)/**/}*.spec.js\"",
     "client": "webpack-dev-server --config ./webpack.config.js --mode development",
     "server": "NODE_ENV=development nodemon server/server.js",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",

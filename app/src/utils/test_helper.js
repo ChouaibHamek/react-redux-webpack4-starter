@@ -1,3 +1,4 @@
+require.extensions['.png'] = function(){ return null; }
 import _$ from "jquery";
 import React from "react";
 import ReactDOM from "react-dom";
