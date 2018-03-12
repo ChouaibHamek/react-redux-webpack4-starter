@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
-import Posts from '../posts/posts.js'
-import HomePage from '../homePage/home_page.js'
+import Posts from '../posts/posts.jsx'
+import HomePage from '../homePage/home_page.jsx'
 
 export  default class extends Component {
 
