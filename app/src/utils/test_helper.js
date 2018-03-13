@@ -1,4 +1,5 @@
-/* eslint-disable react/no-find-dom-node, function-paren-newline, react/jsx-filename-extension */
+/* eslint-disable react/no-find-dom-node, function-paren-newline,
+react/jsx-filename-extension, import/no-extraneous-dependencies */
 
 import _$ from 'jquery'
 import React from 'react'
