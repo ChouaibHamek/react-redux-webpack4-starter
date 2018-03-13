@@ -1,4 +1,6 @@
-/* eslint-disable react/jsx-filename-extension, no-console */
+/* eslint-disable react/jsx-filename-extension, no-console,
+import/no-extraneous-dependencies, global-require */
+
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
@@ -6,11 +8,11 @@ import './semantic/dist/semantic.min.css'
 import './global-style.css'
 import configureStore from './utils/configure_store'
 
-const RedBox = require('redbox-react').default
 const App = require('./containers/app/app.jsx').default
 
 const store = configureStore()
 const rootEl = document.getElementById('root')
+const DEV = process.env.NODE_ENV === 'development'
 
 let render = () => {
   ReactDOM.render(
@@ -21,7 +23,8 @@ let render = () => {
   )
 }
 
-if (module.hot) {
+if (module.hot && DEV) {
+  const RedBox = require('redbox-react').default
   const renderApp = render
   const renderError = (error) => {
     ReactDOM.render(
