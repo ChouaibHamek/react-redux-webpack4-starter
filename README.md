@@ -9,6 +9,7 @@
 * Semantic UI React set up
 * Semantic UI theming set up
 * Mocha Chai testing set up
+* ESLint setup (default: airbnb standard - semi rule)
 * Local Express server set up for dev
 * Hot Module Replacement set up
 * redux-devtools-extension set up
@@ -30,6 +31,9 @@
 * `> npm run client`   Run react app only
 * `> npm run server`   Run dev server only
 * `> npm run start`   Run prod Server (to serve the react app on port 5000)
+
+## ESLint
+* `> npm run lint:watch` Run ESLint on /app and /server
 
 ## Testing
 
