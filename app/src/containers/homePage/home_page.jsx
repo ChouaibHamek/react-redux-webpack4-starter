@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchExpressData } from './actions'
 import { Button } from 'semantic-ui-react'
 
-class HomePage extends Component {
+import { fetchExpressData } from './actions'
 
-  componentWillMount(){
+class HomePage extends Component {
+  componentWillMount() {
     this.props.fetchExpressData()
   }
 
-  render(){
-    return(
+  render() {
+    return (
       <div className="home-page">
         <p>Welcome to the home page</p>
         <p style={{ color: '#de3f3f' }}>{this.props.express.express}</p>
@@ -20,7 +20,7 @@ class HomePage extends Component {
   }
 }
 
-function mapSateToprops(state){
+function mapSateToprops(state) {
   return { express: state.express }
 }
 

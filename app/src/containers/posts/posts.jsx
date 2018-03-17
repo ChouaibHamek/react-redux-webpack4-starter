@@ -1,21 +1,22 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchPosts } from './actions'
 import _ from 'lodash'
 
+import { fetchPosts } from './actions'
+
 class Posts extends Component {
-  componentWillMount(){
+  componentWillMount() {
     this.props.fetchPosts()
   }
-  renderPostsList(){
-    return _.map( this.props.posts, post =>
+  renderPostsList() {
+    return _.map(this.props.posts, post => (
       <li key={post.id}>
         {post.title}
       </li>
-    )
+    ))
   }
-  render(){
-    return(
+  render() {
+    return (
       <div>
         <h3>Posts</h3>
         <ul>
@@ -26,7 +27,7 @@ class Posts extends Component {
   }
 }
 
-function mapStateToProps(state){
+function mapStateToProps(state) {
   return { posts: state.posts }
 }
 
