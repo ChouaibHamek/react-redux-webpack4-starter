@@ -8,13 +8,12 @@ import './semantic/dist/semantic.min.css'
 import './global-style.css'
 import configureStore from './utils/configure_store'
 
-const App = require('./containers/app/app.jsx').default
-
 const store = configureStore()
 const rootEl = document.getElementById('root')
 const DEV = process.env.NODE_ENV === 'development'
 
 let render = () => {
+  const App = require('./containers/app/app.jsx').default
   ReactDOM.render(
     <Provider store={store}>
       <App />
