@@ -1,26 +1,37 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Container } from 'semantic-ui-react'
+
+import Header from '../header/header'
+import Signin from '../auth/signin'
 import { fetchExpressData } from './actions'
-import { Button } from 'semantic-ui-react'
+
+const appBodyStyle = {
+  marginTop: '70px',
+  height: '100%',
+}
 
 class HomePage extends Component {
-
-  componentWillMount(){
+  componentWillMount() {
     this.props.fetchExpressData()
   }
 
-  render(){
-    return(
-      <div className="home-page">
-        <p>Welcome to the home page</p>
-        <p style={{ color: '#de3f3f' }}>{this.props.express.express}</p>
-        <Button primary>Welcome to the semantic world</Button>
+  render() {
+    return (
+      <div
+        className="home-page"
+        style={{ background: '#f7f7f7' }}
+      >
+        <Header />
+        <Container text style={appBodyStyle}>
+          <Signin />
+        </Container>
       </div>
     )
   }
 }
 
-function mapSateToprops(state){
+function mapSateToprops(state) {
   return { express: state.express }
 }
 

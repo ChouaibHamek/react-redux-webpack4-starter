@@ -12,7 +12,7 @@
     "watch-semantic": "cd app/src/semantic && npm run build-semantic && gulp watch",
     "test:watch": "npm run test -- --watch",
     "test:watch:feat": "mocha --watch --compilers js:babel-core/register --require ./app/src/utils/test_helper.js --recursive",
-    "lint": "esw webpack.config.js app server",
+    "lint": "esw webpack.config.js --ext .js --ext .jsx app server",
     "lint:watch": "npm run lint -- --watch",
     "postinstall": "npm run build-semantic && webpack -p",
     "start": "NODE_ENV=production node server/server.js"
@@ -80,6 +80,7 @@
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
+    "redux-form": "^7.3.0",
     "redux-thunk": "^2.2.0",
     "semantic-ui-react": "^0.78.3"
   }

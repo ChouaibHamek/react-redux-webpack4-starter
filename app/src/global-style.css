@@ -1,12 +1,16 @@
-/* :global(html), :global(body) {
+:global(html), :global(body) {
   height: 100%;
   overflow: hidden;
 }
 
-:global(.full-height) {
+:global(.full-height),
+:global(#root),
+:global(.app),
+:global(.home-page) {
   height: 100%;
 }
 
-:global(.container) {
-  background-color: #4cf0bd;
-} */
+:global(.devops) {
+  margin-right: 30;
+  background-color: #ff2d3c;
+}
