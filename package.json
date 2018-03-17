@@ -14,7 +14,7 @@
     "test:watch:feat": "mocha --watch --compilers js:babel-core/register --require ./app/src/utils/test_helper.js --recursive",
     "lint": "esw webpack.config.js app server",
     "lint:watch": "npm run lint -- --watch",
-    "postinstall": "webpack -p",
+    "postinstall": "npm run build-semantic && webpack -p",
     "start": "NODE_ENV=production node server/server.js"
   },
   "keywords": [],
