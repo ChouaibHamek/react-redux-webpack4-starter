@@ -1,5 +1,5 @@
-import React from 'react';
-import { Form, Label, Input } from 'semantic-ui-react';
+import React from 'react'
+import { Form, Label, Input } from 'semantic-ui-react'
 import leftLabel from './left_label'
 
 export default function semanticFormFieldLabel (field) {

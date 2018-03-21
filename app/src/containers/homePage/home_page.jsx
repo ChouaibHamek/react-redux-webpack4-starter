@@ -3,8 +3,8 @@ import { connect } from 'react-redux'
 import { Route, Link } from 'react-router-dom'
 import { Container } from 'semantic-ui-react'
 
-import Header from '../header/header'
-import requireAuth from '../app/require_auth.jsx'
+import Header from '../common/header.jsx'
+import requireAuth from '../common/require_auth.jsx'
 import SecretPage from '../pages/secret-page.jsx'
 
 const homeBackgroundStyle = {
