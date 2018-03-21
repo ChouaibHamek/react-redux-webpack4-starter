@@ -9,28 +9,24 @@
 * Semantic UI React set up
 * Semantic UI theming set up
 * Mocha Chai testing set up
-* ESLint setup (default: airbnb standard - semi rule)
+* ESLint setup (default: airbnb standard)
 * Local Express server set up for dev
 * Hot Module Replacement set up
 * redux-devtools-extension set up
 * redbox-react set up
 * Staging ES Next Features
-* Deployment ready
-* Example axios and thunk api requests handling
+* Example axios and thunk api requests handling and testing
 
 ## Installation
 
-```
-> npm install
-```
+* `> npm install`
+* `> npm run build-semantic`   Generate minified css for configured semantic-ui theme
 
 ## Running
 
-* `> npm run build-semantic`   Run Glup build tasks to generate the minified CSS file
 * `> npm run dev `   Concurrently run react app on port 8080 and dev server on port 5000
-* `> npm run client`   Run react app only
+* `> npm run app`   Run react app only
 * `> npm run server`   Run dev server only
-* `> npm run start`   Run prod Server (to serve the react app on port 5000)
 
 ## ESLint
 * `> npm run lint:watch` Run ESLint on /app and /server
@@ -38,13 +34,5 @@
 ## Testing
 
 * `> npm run test `   Run all tests
-* `> npm run test:watch`   Run all tests with watch mode
-* `> npm run test:watch:feat <path>`   Run tests for a specific feature.
-Path could be `./src/containers/app/tests` for app-specific tests.
-
-## Production
-
-```
-> npm run postinstall
-> npm start
-```
+* `> npm run test:app`   Run app tests
+* `> npm run test:server`   Run server tests
