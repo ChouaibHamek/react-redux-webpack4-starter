@@ -7,8 +7,10 @@ import { Provider } from 'react-redux'
 import './semantic/dist/semantic.min.css'
 import './global-style.css'
 import configureStore from './utils/configure_store'
+import preHooks from './utils/pre_hooks'
 
-const store = configureStore()
+const store = preHooks(configureStore())
+
 const rootEl = document.getElementById('root')
 const DEV = process.env.NODE_ENV === 'development'
 

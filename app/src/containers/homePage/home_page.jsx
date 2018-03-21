@@ -1,38 +1,38 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Route, Link } from 'react-router-dom'
 import { Container } from 'semantic-ui-react'
 
 import Header from '../header/header'
-import Signin from '../auth/signin'
-import { fetchExpressData } from './actions'
+import requireAuth from '../app/require_auth.jsx'
+import SecretPage from '../pages/secret-page.jsx'
 
-const appBodyStyle = {
-  marginTop: '70px',
+const homeBackgroundStyle = {
   height: '100%',
+  background: '#f7f7f7',
+}
+
+const homeBodyStyle = {
+  height: '100%',
+  paddingTop: '75px',
 }
 
 class HomePage extends Component {
-  componentWillMount() {
-    this.props.fetchExpressData()
-  }
-
   render() {
+    const { match } = this.props
     return (
       <div
         className="home-page"
-        style={{ background: '#f7f7f7' }}
+        style={homeBackgroundStyle}
       >
         <Header />
-        <Container text style={appBodyStyle}>
-          <Signin />
+        <Container text style={homeBodyStyle}>
+          <Route path={`${match.url}secret-page`} component={requireAuth(SecretPage)} />
+          <Route exact path={match.url} component={() => (<p>Landing Page</p>)} />
         </Container>
       </div>
     )
   }
 }
 
-function mapSateToprops(state) {
-  return { express: state.express }
-}
-
-export default connect(mapSateToprops, { fetchExpressData })(HomePage)
+export default HomePage
