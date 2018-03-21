@@ -1,4 +1,4 @@
-const webpack = require('webpack')
+const webpack = require('webpack');
 
 module.exports = {
   entry: [
@@ -35,4 +35,4 @@ module.exports = {
     historyApiFallback: true,
     hot: true,
   },
-}
+};

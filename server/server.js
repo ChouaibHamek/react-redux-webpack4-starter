@@ -1,24 +1,27 @@
 /* eslint-disable no-console */
-const express = require('express')
-const path = require('path')
+const express = require('express');
+const http = require('http');
+const morgan = require('morgan');
+const cors = require('cors');
 
-const port = process.env.PORT || 5000
-const app = express()
-const development = process.env.NODE_ENV !== 'production'
+const app = express();
 
-if (development) {
-  app.get('/api/hello', (req, res) => {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:8080')
-    res.send({ express: 'Hello From Express' })
-  })
+// Middleware set up
+app.use(morgan('combined'));
 
-  console.log('Development express server running..')
-} else {
-  app.use(express.static(path.join(__dirname, '../app/dist')))
+// CORS configuration
+const whitelist = ['http://localhost:8080'];
+const corsOptions = {
+  origin: whitelist,
+};
 
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../app/dist/index.html'))
-  })
-}
+// API routes
+app.get('/api/hello', cors(corsOptions), (req, res) => {
+  res.send({ message: 'Hello From Express' });
+});
 
-app.listen(port, () => console.log(`Listening on port ${port}`))
+// Server setup
+const port = process.env.PORT || 5000;
+const server = http.createServer(app);
+server.listen(port);
+console.log('Http server listening on:', port);

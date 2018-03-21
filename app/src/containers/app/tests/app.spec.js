@@ -1,14 +1,14 @@
-import { renderComponent, expect } from '../../../utils/test_helper'
-import App from '../app'
+import { renderComponent, expect } from '../../../utils/test_helper';
+import App from '../app';
 
 describe('App', () => {
-  let component
+  let component;
 
   beforeEach(() => {
-    component = renderComponent(App)
-  })
+    component = renderComponent(App);
+  });
 
-  it('It renders an element with class App', () => {
-    expect(component).to.have.class('app')
-  })
-})
+  it('renders an element with class app', () => {
+    expect(component).to.have.class('app');
+  });
+});

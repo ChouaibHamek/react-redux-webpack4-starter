@@ -1,16 +1,14 @@
-import React from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import Posts from '../posts/posts'
-import HomePage from '../homePage/home_page'
+import Home from '../home/home';
 
 export default () => (
   <div className="app">
     <BrowserRouter>
       <Switch>
-        <Route path="/posts" component={Posts} />
-        <Route path="/" component={HomePage} />
+        <Route path="/" component={Home} />
       </Switch>
     </BrowserRouter>
   </div>
-)
+);
