@@ -5,7 +5,7 @@ export const FETCH_MESSAGE = 'FETCH_MESSAGE'
 
 export function fetchSecretMessage () {
   return function (dispatch) {
-    axios.get(ROOT_URL, {
+    return axios.get(ROOT_URL, {
       headers: { authorization: localStorage.getItem('token') }
     })
       .then(response => {

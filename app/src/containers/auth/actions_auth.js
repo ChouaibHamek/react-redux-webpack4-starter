@@ -8,7 +8,7 @@ export const ROOT_URL = 'http://localhost:3090'
 
 export function signinAction({ email, password, history }) {
   return function (dispatch) {
-    axios.post(`${ROOT_URL}/signin`, { email, password })
+    return axios.post(`${ROOT_URL}/signin`, { email, password })
       .then( response => {
         dispatch({ type: AUTHENTICATE })
         localStorage.setItem('token', response.data.token)
@@ -22,7 +22,7 @@ export function signinAction({ email, password, history }) {
 
 export function signUpAction({ email, password, history }) {
   return function (dispatch) {
-    axios.post(`${ROOT_URL}/signup`, { email, password })
+    return axios.post(`${ROOT_URL}/signup`, { email, password })
       .then( response => {
         dispatch({ type: AUTHENTICATE })
         localStorage.setItem('token', response.data.token)
